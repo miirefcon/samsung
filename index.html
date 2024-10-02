@@ -551,6 +551,7 @@
         <!-- View Data Tab -->
         <div id="view-tab" class="tab fade-in">
             <input type="text" id="search" placeholder="Search...">
+            <button id="refreshButton">Refresh</button>
             <button id="budgetwise-button" onclick="window.location.href='https://miirefcon.github.io/budgetwise/';">BUDGETWISE SYSTEM</button>
             <div class="table-wrapper">
                 <table>
@@ -698,6 +699,14 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
         }
+
+        function refresh() {
+           
+            loadLogs();
+
+        }
+
+        document.getElementById('refreshButton').addEventListener('click', refresh);
 
         // Function to format number as PHP peso
         function formatPeso(number) {
